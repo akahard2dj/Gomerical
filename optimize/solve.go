@@ -2,11 +2,10 @@ package optimize
 
 import (
 	"errors"
-	"fmt"
 	"math"
 )
 
-// SolveFunction is taget function for a solving
+// SolveFunction is target function for a solving
 type SolveFunction func(float64) float64
 
 // SolveDerivFunction is target first derive function for a solving
