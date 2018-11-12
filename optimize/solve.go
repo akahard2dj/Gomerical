@@ -6,9 +6,13 @@ import (
 	"math"
 )
 
+// SolveFunction is taget function for a solving
 type SolveFunction func(float64) float64
+
+// SolveDerivFunction is target first derive function for a solving
 type SolveDerivFunction func(float64) float64
 
+// BisectionSolve is solver using a bisection method
 func BisectionSolve(f SolveFunction, start float64, end float64) (float64, error) {
 	maxIter := 1000
 	tol := 1e-4
@@ -28,9 +32,11 @@ func BisectionSolve(f SolveFunction, start float64, end float64) (float64, error
 			end = p
 		}
 	}
+
 	return -999, errors.New("Maximum number of itertions reached")
 }
 
+// NewtonSolve is solver using a newton's method
 func NewtonSolve(f SolveFunction, df SolveDerivFunction, initialGeuess float64) (float64, error) {
 	maxIter := 1000
 	tol := 1e-5
